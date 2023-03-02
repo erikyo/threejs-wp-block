@@ -1,0 +1,12 @@
+{
+	"apiVersion": 2,
+	"name": "codekraft/threejs-block",
+	"title": "three-js",
+	"description": "A wp-block threejs in typescript",
+	"keywords": [ "wp-block", "threejs" ],
+	"category": "media",
+	"editorScript": "file:./build/three.js",
+	"editorScript": "file:./build/threejs-block.js",
+	"editorStyle": "file:./build/threejs-block.css",
+	"style": "file:./build/style-threejs-block.css"
+}
