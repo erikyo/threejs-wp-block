@@ -1,25 +1,15 @@
-export const defaultScript: string = `
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+export const defaultScript: string = `import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
-
-camera.position.z = 5;
-
-function animate() {
-\trequestAnimationFrame( animate );
-
-\tcube.rotation.x += 0.01;
-\tcube.rotation.y += 0.01;
-
-\trenderer.render( scene, camera );
-}
-
-animate();`;
+neonCursor({
+  el: document.body,
+  shaderPoints: 16,
+  curvePoints: 80,
+  curveLerp: 0.5,
+  radius1: 5,
+  radius2: 30,
+  velocityTreshold: 10,
+  sleepRadiusX: 100,
+  sleepRadiusY: 100,
+  sleepTimeCoefX: 0.0025,
+  sleepTimeCoefY: 0.0025
+})`;
